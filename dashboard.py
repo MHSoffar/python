@@ -10,16 +10,6 @@ a = st.sidebar.radio('Select What Service You Need :', ["Welcome Page" ,"page_1"
 if a=="Welcome Page":
 
     st.title("Welcome To Our Site Please Select The Service You Need From The SideBar")
-    with st.form("my_form"):
-        st.write("Inside the form")
-        slider_val = st.slider("Form slider")
-        checkbox_val = st.checkbox("Form checkbox")
-
-    submitted = st.form_submit_button("Submit")
-    if submitted:
-        st.write("slider", slider_val, "checkbox", checkbox_val)
-
-    st.write("Outside the form")
 
 elif a=="page_1":
 
