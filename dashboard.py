@@ -1,7 +1,7 @@
 import streamlit as st
 import re
-import pywhatkit
 import datetime 
+
 st.set_page_config("Site Progress",":pencil:","wide","collapsed")
 
 
@@ -11,7 +11,8 @@ st.set_page_config("Site Progress",":pencil:","wide","collapsed")
 a = st.sidebar.radio('Select What Service You Need :', ["Welcome Page" ,"page_1" , "caluculator"])
 if a=="Welcome Page":
 
-    st.title("Welcome To Our Site Please Select The Service You Need From The SideBar")
+    col_1,col_2,col_3=st.columns([1,2,1])
+    col_2.title("Welcome To Our Site Please Select The Service You Need From The SideBar")
 
 
     
@@ -21,24 +22,15 @@ if a=="Welcome Page":
     with col_2.form(key='my_form'):
         name = st.text_input('Name')
         phone = st.text_input('Phone Number')
+        mail=st.text_input("Mail ID")
         x=st.form_submit_button('Login')
-    if x == True :      
-        col_2.text(f"welcome to our site Mr.{name}, Please enter the code you recieved")
-        col_2.text(f" Please enter the code you recieved")
-        c=datetime.datetime.now().hour
-        cc=datetime.datetime.now().minute+1
-        col_2.text(f"{c}:{cc}")
-
-
-        pywhatkit.sendwhatmsg(phone,"welcome to our site ",c,cc)
-
-        st.snow()
+    st.snow()    
 
 elif a=="page_1":
 
     st.title('ARAR transmission line :red[( 380 KV DC ) ]')
 
-    x=st.button("Smile")
+    x=st.button("Smile")    
     if x== True :
      # st.balloons()
         st.snow()
